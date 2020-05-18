@@ -1692,7 +1692,9 @@ namespace Terraria.Plugins.CoderCow.Protector {
         return;
       }
 
-      if (chestKindToSelect != ChestKind.Unknown) {
+            if (chestKindToSelect == ChestKind.Unknown)
+                //args.Player.SendWarningMessage("!!!");
+      //if (chestKindToSelect != ChestKind.Unknown) {
         int createdChestsCounter = 0;
         for (int i = 0; i < Main.chest.Length; i++) {
           Chest chest = Main.chest[i];
@@ -1729,8 +1731,9 @@ namespace Terraria.Plugins.CoderCow.Protector {
           }
         }
 
-        args.Player.SendSuccessMessage($"{TShock.Utils.ColorTag(createdChestsCounter.ToString(), Color.Red)} refill chests were created / updated.");
-      }
+            //args.Player.SendSuccessMessage("!!!");
+            args.Player.SendSuccessMessage($"{TShock.Utils.ColorTag(createdChestsCounter.ToString(), Color.Red)} refill chests were created / updated.");
+      //}
     }
 
     private bool RefillChestManyCommand_HelpCallback(CommandArgs args) {
@@ -1747,7 +1750,7 @@ namespace Terraria.Plugins.CoderCow.Protector {
           args.Player.SendMessage("/refillchestmany|/rchestmany <selector> [time] [+ot|-ot] [+ll amount|-ll] [+al|-al] [+ae|-ae] [+fl]", Color.White);
           args.Player.SendMessage("Converts all selected chests to refill chests or alters them.", Color.LightGray);
           args.Player.SendMessage(string.Empty, Color.LightGray);
-          args.Player.SendMessage("selector = world (dangerous), dungeon, sky, ocean, shadow, hardmodedungeon or pyramid", Color.LightGray);
+          args.Player.SendMessage("selector = world (dangerous - backup before), dungeon, sky, ocean, shadow, hardmodedungeon or pyramid", Color.LightGray);
           args.Player.SendMessage("time = Examples: 2h, 2h30m, 2h30m10s, 1d6h etc.", Color.LightGray);
           break;
         case 2:
