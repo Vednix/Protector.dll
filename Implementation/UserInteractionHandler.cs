@@ -1692,7 +1692,7 @@ namespace Terraria.Plugins.CoderCow.Protector {
         return;
       }
 
-            if (chestKindToSelect == ChestKind.Unknown)
+            //if (chestKindToSelect == ChestKind.Unknown)
                 //args.Player.SendWarningMessage("!!!");
       //if (chestKindToSelect != ChestKind.Unknown) {
         int createdChestsCounter = 0;
